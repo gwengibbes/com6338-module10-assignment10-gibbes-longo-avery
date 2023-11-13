@@ -1,0 +1,3 @@
+/*
+    This is specifically for the recipe generator page
+*/
