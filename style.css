@@ -46,7 +46,17 @@
     background-size: cover;
     background-blend-mode: overlay;
   }
-  
+  section > h1 {
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 300px;
+    padding: 72px 0;
+    align-items: center;
+    justify-content: space-between;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--red);
+  }
   section > div {
     display: flex;
     flex-wrap: wrap;
@@ -148,10 +158,6 @@ section > div img {
   width: auto;
   height: 100%;
 }
-section > div #bob {
-  margin-left: 100px;
-}
-
 section:nth-child(2) {
   background-color: #e4e4e4;
 }
