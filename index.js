@@ -1,23 +1,31 @@
+const edamamKey="fedc606a902ac509ffa30b75cad44f35";
+const spoonacularKey="0a62124c70384954a9d43515e0216eb5";
+//get wineFamily from localStorage
+const wineFamily= "white" // or"white" depending on user choice from homepage 
+
+document.addEventListener("DOMContentLoaded", async (event) => {
+    const wines= await fetchWines(wineFamily)
+    console.log(wines)
+});
+
+async function fetchWines(wineFamily){
+    /*
+    const redWines= ["bonarda", "bairrada", "primitivo", "nebbiolo", "dolcetto", "rioja", "grenache", "malbec", "zinfandel", "carmenere", "cesanese", "aglianico", "tempranillo", "shiraz", "merlot", "bordeaux"];
+    const whiteWines= ["verdicchio", "chardonnay", "frascati", "gavi", "trebbiano", "catarratto", "albarino", "arneis", "verdejo", "vermentino", "soave", "grechetto", "riesling", "sauternes", "sylvaner"];
+    */
+
+    const recommendedWines = await fetch(`https://api.spoonacular.com/food/wine/description?apiKey=${spoonacularKey}&wine=merlot&number=2`);
+    // in above line I will need to replace merlot with the selection from the user in our search menu
+    return await recommendedWines.json();
+}
+
+function createSelectOptions(){
+
+}
 
 
-/* Spoonacular API: this app will provide the list of recommended wines, we will need to filter by red / white
-*/
-SpoonacularKey = "*****************************";
 
-const RecommendedWines = await fetch ('https://api.spoonacular.com/food/wine/recommendation?Spoonacularkey')
-const WinesData = await RecommendedWines.json();
-console log (WinesData)
-const RecommendedRed =
-const RecommendedWhite =
 
-/* Edamam API: this is the API to get recipes
-Access Point: https://api.edamam.com/api/recipes/v2
 
-Application ID:
 
-22b25df1
-
-This is the application ID, you should send with each API request.
-Application Keys
-fedc606a902ac509ffa30b75cad44f35 —
-*/
+   
