@@ -1,11 +1,19 @@
+/* 
+    This file will only define the variables and functions that we need that will be used
+    by the JavaScript file on all pages.
+*/
+
+const lsWinePrefKey = 'sml.winePref'
 const edamamKey="fedc606a902ac509ffa30b75cad44f35";
 const spoonacularKey="0a62124c70384954a9d43515e0216eb5";
-//get wineFamily from localStorage
-const wineFamily= "white" // or"white" depending on user choice from homepage 
+
+function getWineFamilyPreference() {
+    // get wine family from localStorage
+    return localStorage.getItem(lsWinePrefKey);
+}
 
 document.addEventListener("DOMContentLoaded", async (event) => {
-    const wines= await fetchWines(wineFamily)
-    console.log(wines)
+    
 });
 
 async function fetchWines(wineFamily){
@@ -19,13 +27,9 @@ async function fetchWines(wineFamily){
     return await recommendedWines.json();
 }
 
+
 function createSelectOptions(){
 
 }
 
-
-
-
-
-
-   
+// Call the API to get the list of food pairings based on the selected wine
