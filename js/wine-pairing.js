@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", async (event) => {
     const wines= await fetchWines(wineFamily)
     console.log(wines)
 
-    // Populae the drop downlist with the list of wines from the API 
+    // Populate the drop downlist with the list of wines from the API 
     /* 
         When the user selects the wine from the list
         1. Save the selected wine to localstorage
