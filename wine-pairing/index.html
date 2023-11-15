@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
   </head>
   <body>
     <header>
@@ -18,35 +18,31 @@
         <ul class="hamburger-menu" id="main-menu">
           <li><a href="/">Home</a></li>
           <li><a href="#">Shop</a></li>
-          <li><a href="page-1.html">Wine Pairing</a></li>
-          <li><a href="page-2.html">Recipe Generator</a></li>
+          <li><a href="/wine-pairing/">Wine Pairing</a></li>
+          <li><a href="/recipe-generator/">Recipe Generator</a></li>
         </ul>
       </nav>
     </header>
     <div class="banner">
-      <img src="./img/logo.png" alt="Winery Background Image Here">
     </div>
     <main>
-      <article>
         <section>
           <div>
             <div>
-                <div>
               <h2>Choose one of our recommended wines to get recipe recommendations. <span></span></h2>
             </div>
             <label for="wine-select">Choose wine:</label>
             <select name="wines" id="wine-select">
             </select>
-              </div>
-            <img src="need to put in image here" alt="Wine Red or White Glasses Image Here">
           </div>
+          <img class="featured-image" src="/images/Wine and Cheese .jpg" alt="Wine and Cheese Image Here">
         </div>
         </section>
-      </article>
     </main>
     <footer>
         <p>&copy; 1 Carlos Street, Port of Spain, Trinidad, West Indies</p>
     </footer>
-    <script src="index.js"></script>
+    <script src="/index.js"></script>
+    <script type="module" src="/js/wine-pairing.js"></script>
   </body>
 </html>
