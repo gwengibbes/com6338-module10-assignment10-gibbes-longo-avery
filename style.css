@@ -161,6 +161,20 @@ section > div img {
 .dropdown:hover .dropbtn {
   background-color: #3e8e41;
 }
+
+/* STYLE SELECT (dropdown)
+label {
+  font-family: sans-serif;
+  font-size: 1rem;
+  padding-right: 10px;
+}
+
+select {
+  font-size: 0.9rem;
+  padding: 2px 5px;
+}
+*/
+
 /*This is the styling for the red footer at the bottom of the page.*/
 footer {
   background-color: var(--red);
@@ -168,8 +182,13 @@ footer {
   border-bottom: solid var(--red) 5px;
   text-align: center;
 }
+
+footer img {
+  display: block;
+}
+
 /*Styling for the featured images at the bottom of the wine-pairing page.*/
-.featured-image{
+.featured-image {
   width: 60%;
   display: table;
   margin: 40px auto;
