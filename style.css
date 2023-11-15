@@ -18,10 +18,30 @@
     max-width: 600px;
     margin: 0 auto;
   }
-  
   header {
     width: 100%;
+  }
+  header .logo{
+    width: 80px;
+  }
+  header .navbar {
+    width: 100%;
     background-color: var(--red);
+  }
+  header .navbar li a {
+    color: var(--white)
+  }
+  header h1 {
+    text-align:  center;
+    text-transform: uppercase;
+    font-size: 48px;
+    background: url('./images/Wine glass logo.jpg') no-repeat;
+    background-size: 80px;
+    display: table;
+    margin: 10px auto;
+    background-size: contain;
+    padding: 30px 0 10px;
+    padding-left: 80px;
   }
   header ul {
     margin: 0;
@@ -40,13 +60,28 @@
     align-items: center;
     justify-content: center;
     height: 300px;
-    background-image: url('./img/banner-bg.png');
+    background: url('./images/Winery Banner.jpg') no-repeat;
     background-color: #3b3838e1;
-    background-position: center;
+    background-position: bottom left;
     background-size: cover;
     background-blend-mode: overlay;
   }
-  
+
+  .banner img {
+    width: 100%;
+    height: auto;
+  }
+  section > h1 {
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 300px;
+    padding: 72px 0;
+    align-items: center;
+    justify-content: space-between;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--red);
+  }
   section > div {
     display: flex;
     flex-wrap: wrap;
@@ -132,8 +167,7 @@ header ul li:last-child > a,
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 600px;
-  background-image: url('./img/banner-bg.png');
+  height: 300px;
   background-color: #f9f4f4;
   background-position: center;
   background-size: cover;
@@ -161,10 +195,6 @@ section > div img {
   width: auto;
   height: 100%;
 }
-section > div #bob {
-  margin-left: 100px;
-}
-
 section:nth-child(2) {
   background-color: #e4e4e4;
 }
