@@ -5,10 +5,10 @@ document.addEventListener("DOMContentLoaded", async (event) => {
     const wineFamily = getWineFamilyPreference();
 
     if(!wineFamily) {
-        alert(`No wine selection has been mande as yet`);
+        alert(`No wine selection has been made as yet`);
         return;
     }
-
+    createSelectOptions();  
     const wines= await fetchWines(wineFamily)
     console.log(wines)
 
