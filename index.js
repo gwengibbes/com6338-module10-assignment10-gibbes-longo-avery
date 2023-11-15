@@ -4,40 +4,41 @@
 */
 
 const lsWinePrefKey = 'sml.winePref'
-const edamamKey="fedc606a902ac509ffa30b75cad44f35";
-const spoonacularKey="0a62124c70384954a9d43515e0216eb5";
+const edamamKey = "fedc606a902ac509ffa30b75cad44f35";
+const spoonacularKey = "0a62124c70384954a9d43515e0216eb5";
 //get wineFamily from localStorage
-const wineFamily= getWineFamilyPreference(); // or"white" depending on user choice from homepage 
+const wineFamily = getWineFamilyPreference(); // or"white" depending on user choice from homepage 
+// I would prefer using my key for edamam (const edamamKey= "f61be50c9040c3f95ea07adbb8a3454e") I will run by the group - Jordan
 
-const redWines= ["bonarda", "bairrada", "primitivo", "nebbiolo", "dolcetto", "rioja", "grenache", "malbec", "zinfandel", "carmenere", "cesanese", "aglianico", "tempranillo", "shiraz", "merlot", "bordeaux"];
-const whiteWines= ["verdicchio", "chardonnay", "frascati", "gavi", "trebbiano", "catarratto", "albarino", "arneis", "verdejo", "vermentino", "soave", "grechetto", "riesling", "sauternes", "sylvaner"];
+const redWines = ["bonarda", "bairrada", "primitivo", "nebbiolo", "dolcetto", "rioja", "grenache", "malbec", "zinfandel", "carmenere", "cesanese", "aglianico", "tempranillo", "shiraz", "merlot", "bordeaux"];
+const whiteWines = ["verdicchio", "chardonnay", "frascati", "gavi", "trebbiano", "catarratto", "albarino", "arneis", "verdejo", "vermentino", "soave", "grechetto", "riesling", "sauternes", "sylvaner"];
 
 function getWineFamilyPreference() {
     // get wine family from localStorage
     return localStorage.getItem(lsWinePrefKey);
 }
-    
-document.addEventListener("DOMContentLoaded", async (event) => { 
+
+document.addEventListener("DOMContentLoaded", async (event) => {
     /* const wines= await fetchWines(wineFamily)
     console.log(wines)  */
 });
 
-async function fetchWines(wineFamily){  
+async function fetchWines(wineFamily) {
 
     const recommendedWines = await fetch(`https://api.spoonacular.com/food/wine/description?apiKey=${spoonacularKey}&wine=merlot&number=2`);
     // in above line I will need to replace merlot with the selection from the user in our search menu
     return await recommendedWines.json();
 }
 
-function createSelectOptions(){
+function createSelectOptions() {
     const selectElement = document.getElementById("wine-select")
     let winesArray;
-    if(wineFamily === "white"){
-        winesArray = whiteWines;  
+    if (wineFamily === "white") {
+        winesArray = whiteWines;
     } else {
-        winesArray = redWines;  
+        winesArray = redWines;
     }
-    winesArray.sort().forEach(wine =>{
+    winesArray.sort().forEach(wine => {
         const option = document.createElement("option");
         option.value = wine;
         option.text = wine;
@@ -47,3 +48,14 @@ function createSelectOptions(){
 }
 
 // Call the API to get the list of food pairings based on the selected wine
+
+async function foodPairs(){
+    try {
+        const res = await fetch (`https://api.edamam.com/api/recipes/v2?type=public&app_id=108faad6&app_key=${edamamKey}`)
+        const foodData = await res.json()
+        return foodData.results
+    } catch (error) {
+        console.error ('Not found', error)
+        return ["not found"]
+    }
+}
