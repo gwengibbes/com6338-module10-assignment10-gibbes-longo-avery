@@ -1,6 +1,9 @@
 /*
     This is specifically for the wine family selection page (homepage)
 */
+
+// Below we should delete "async" keyword since nothing is async here
+
 document.addEventListener("DOMContentLoaded", async (event) => {
     // When the DOM is completely loaded, add event listeners to each button for wine family selection
 
@@ -18,3 +21,4 @@ document.addEventListener("DOMContentLoaded", async (event) => {
         window.location = '/wine-pairing/';
     });
 });
+
