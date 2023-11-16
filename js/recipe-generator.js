@@ -1,8 +1,50 @@
-/*
-    This is specifically for the recipe generator page
-*/
+const apiKey = "f61be50c9040c3f95ea07adbb8a3454e";
+const searchInput = document.getElementById('searchInput');
+const searchButton = document.getElementById('searchButton');
+const recipeResultsContainer = document.getElementById('recipeResults');
+const savedSearchTerm = localStorage.getItem('savedSearchTerm');
 
-// Get the selected wine from local storage
-// Call the API to get the list of pairings
-// Display the list of food pairings to the user
-// When the user selects a food pairing, display the recipe
+if (savedSearchTerm) {
+  searchInput.value = savedSearchTerm;
+}
+
+searchButton.onclick = function () {
+  searchRecipes();
+};
+
+async function searchRecipes() {
+  const searchTerm = searchInput.value;
+  localStorage.setItem('savedSearchTerm', searchTerm);
+  const apiUrl = `https://api.edamam.com/api/recipes/v2?type=public&q=${searchTerm}&app_id=108faad6&app_key=${apiKey}`;
+
+  try {
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+    displayResults(data);
+  } catch (error) {
+    console.error('Fetch error:', error);
+    displayError();
+  }
+}
+
+function displayResults(data) {
+  recipeResultsContainer.innerHTML = '';
+
+  if (data.hits && data.hits.length > 0) {
+    data.hits.forEach(hit => {
+      const recipe = hit.recipe;
+      const recipeElement = document.createElement('div');
+      recipeElement.innerHTML = `<h2>${recipe.label}</h2>
+                                 <p>${recipe.source}</p>
+                                 <img src="${recipe.image}" alt="${recipe.label}">
+                                 <a href="${recipe.url}" target="_blank">View Recipe</a>`;
+      recipeResultsContainer.appendChild(recipeElement);
+    });
+  } else {
+    recipeResultsContainer.innerHTML = '<p>No recipes found.</p>';
+  }
+}
+
+function displayError() {
+  recipeResultsContainer.innerHTML = '<p>Please try again later.</p>';
+}
