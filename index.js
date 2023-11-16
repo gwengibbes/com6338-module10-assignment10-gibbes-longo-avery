@@ -19,4 +19,12 @@ function getWineFamilyPreference() {
     return localStorage.getItem(lsWinePrefKey);
 }
 
+document.getElementById("redWineSelection").onclick=function() {
+    location.href = "wine-pairing";
+function imageClick(url) {
+window.location = url;
+}
+<img src="//images/Wine being poured -red.jpg"/>
+};
+
 // Call the API to get the list of food pairings based on the selected wine
