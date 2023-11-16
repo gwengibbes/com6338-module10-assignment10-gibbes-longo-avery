@@ -5,19 +5,15 @@
 
 const lsWinePrefKey = 'sml.winePref'
 const edamamKey="fedc606a902ac509ffa30b75cad44f35";
-//get wineFamily from localStorage
-const wineFamily= getWineFamilyPreference(); // or"white" depending on user choice from homepage 
 
-// fix: added by me
+
+// fix: added 
 window.lsWinePrefKey = lsWinePrefKey;
-// putting variables in window object is considered a BAD PRACTICE! 
+// putting variables in window object is considered a bad practice
 // we should create an utility file to import function from the files
-window.getWineFamilyPreference = getWineFamilyPreference;
 
-function getWineFamilyPreference() {
-    // get wine family from localStorage
-    return localStorage.getItem(lsWinePrefKey);
-}
+
+
 
 document.getElementById("redWineSelection").onclick=function() {
     location.href = "wine-pairing";

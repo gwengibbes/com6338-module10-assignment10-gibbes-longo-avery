@@ -193,3 +193,208 @@ footer img {
   display: table;
   margin: 40px auto;
 }
+
+.foodimage {
+  width: 600px;
+  height: 600px;
+  display: table;
+  max-width: 200px; 
+  height: auto;
+}
+
+@media screen and (max-width: 1300px) {
+  .banner {
+    height: 500px;
+  }
+  nav > ul {
+    justify-content: space-evenly;
+  }
+  nav > ul > li {
+    margin-right: 0;
+  }
+  section div {
+    justify-content: center;
+  }
+  section div #bob {
+    margin-left: 0;
+  }
+  section div div {
+    max-width: 95%;
+  }
+  section div div button {
+    display: block;
+    margin: auto;
+  }
+  section div div h2 {
+    text-align: center;
+  }
+  section div:first-of-type img {
+    order: -1;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .banner img {
+    max-width: 300px;
+  }
+  .hamburger-btn {
+    display: block;
+  }
+  header {
+    box-sizing: border-box;
+  }
+  ul.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    transform: translateY(-50%) scaleY(0);
+    width: 100%;
+    background-color: var(--yellow);
+    transition: transform 100ms;
+    padding: 0;
+  }
+  ul.hamburger-menu.show-menu {
+    transform: none;
+  }
+  ul.hamburger-menu li {
+    opacity: 0;
+    padding: 6px 0;
+    margin: 0;
+    text-align: center;
+    font-weight: 500;
+    visibility: hidden;
+  }
+  nav ul.hamburger-menu.show-menu li {
+    visibility: visible;
+    animation: fade-in 100ms ease 100ms 1 forwards;
+  }
+  ul.hamburger-menu li:last-child {
+    padding-bottom: 24px;
+  }
+  footer > img {
+    max-width: 300px;
+  }
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}
+  button {
+    background-color: var(--yellow);
+    border: none;
+    border-radius: 6px;
+    padding: 12px 24px;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 100ms;
+  }
+
+  button:hover, button:focus {
+    background-color: var(--red);
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  a:hover, a:focus {
+    text-decoration: underline;
+  }
+
+  .hamburger-btn {
+    display: none;
+    font-size: 3rem;
+    padding: 12px 24px 24px;
+  }
+
+  @media screen and (max-width: 1300px) {
+    .banner {
+      height: 500px;
+    }
+    nav > ul {
+      justify-content: space-evenly;
+    }
+    nav > ul > li {
+      margin-right: 0;
+    }
+    section div {
+      justify-content: center;
+    }
+    section div #bob {
+      margin-left: 0;
+    }
+    section div div {
+      max-width: 95%;
+    }
+    section div div button {
+      display: block;
+      margin: auto;
+    }
+    section div div h2 {
+      text-align: center;
+    }
+    section div:first-of-type img {
+      order: -1;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    .banner img {
+      max-width: 300px;
+    }
+    .hamburger-btn {
+      display: block;
+    }
+    header {
+      box-sizing: border-box;
+    }
+    ul.hamburger-menu {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      transform: translateY(-50%) scaleY(0);
+      width: 100%;
+      background-color: var(--yellow);
+      transition: transform 100ms;
+      padding: 0;
+    }
+    ul.hamburger-menu.show-menu {
+      transform: none;
+    }
+    ul.hamburger-menu li {
+      opacity: 0;
+      padding: 6px 0;
+      margin: 0;
+      text-align: center;
+      font-weight: 500;
+      visibility: hidden;
+    }
+    nav ul.hamburger-menu.show-menu li {
+      visibility: visible;
+      animation: fade-in 100ms ease 100ms 1 forwards;
+    }
+    ul.hamburger-menu li:last-child {
+      padding-bottom: px;
+    }
+    footer > img {
+      max-width: 200px;
+    }
+  }
+
+  @keyframes fade-in {
+    to {
+      opacity: 1;
+    }
+  }
+
+
+  /**    
+  margin: auto;
+    max-width: 200px;
+    height: auto;
+  }
