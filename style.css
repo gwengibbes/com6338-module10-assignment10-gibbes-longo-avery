@@ -28,7 +28,7 @@ header {
 header .logo {
   width: 80px;
 }
-/*This is the wideth of the banner and the red color.*/
+/*This is the width of the banner and the red color.*/
 header .navbar {
   width: 100%;
   background-color: var(--red);
@@ -281,8 +281,8 @@ footer img {
     opacity: 1;
   }
 }
-  button {
-    background-color: var(--yellow);
+  /* Styling for all buttons.*/
+  button, a.btn {
     border: none;
     border-radius: 6px;
     padding: 12px 24px;
@@ -293,7 +293,7 @@ footer img {
     transition: 100ms;
   }
 
-  button:hover, button:focus {
+  button:hover, button:focus, a.btn:hover, a.btn:focus {
     background-color: var(--red);
   }
 
@@ -324,9 +324,6 @@ footer img {
     }
     section div {
       justify-content: center;
-    }
-    section div #bob {
-      margin-left: 0;
     }
     section div div {
       max-width: 95%;
@@ -384,6 +381,9 @@ footer img {
     footer > img {
       max-width: 200px;
     }
+    .text-lg {
+      font-size: 36px;
+    }
   }
 
   @keyframes fade-in {
@@ -391,10 +391,12 @@ footer img {
       opacity: 1;
     }
   }
+ /* This is a generic class to center text on any element. See index html h2.*/
+.text-center{
+  text-align: center;
+}
 
-
-  /**    
-  margin: auto;
-    max-width: 200px;
-    height: auto;
-  }
+/*This is a generic class to make text large on any element. See index html h2.*/
+.text-lg{
+  font-size: 48px;
+}
