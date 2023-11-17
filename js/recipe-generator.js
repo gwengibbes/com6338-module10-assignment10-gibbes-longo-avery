@@ -37,7 +37,12 @@ function displayResults(data) {
       recipeElement.innerHTML = `<h2>${recipe.label}</h2>
                                  <p>${recipe.source}</p>
                                  <img src="${recipe.image}" alt="${recipe.label}">
-                                 <a href="${recipe.url}" target="_blank">View Recipe</a>`;
+                                 <button class="view-recipe-btn">View Recipe</button>`;
+
+      const viewRecipeBtn = recipeElement.querySelector('.view-recipe-btn');
+      viewRecipeBtn.addEventListener('click', () => {
+        window.open(recipe.url, '_blank');
+      });
       recipeResultsContainer.appendChild(recipeElement);
     });
   } else {

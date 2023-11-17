@@ -14,7 +14,7 @@ body {
 * {
   font-family: "Roboto", sans-serif;
 }
-/*This is how the tabs or words line up on the red banner at the very top.*/
+/*This is how the tabs or words line up on the banner at the very top.*/
 nav,
 section > div {
   max-width: 600px;
@@ -28,12 +28,12 @@ header {
 header .logo {
   width: 80px;
 }
-/*This is the width of the banner and the red color.*/
+/*This is the width of the banner*/
 header .navbar {
   width: 100%;
   background-color: var(--red);
 }
-/*This is the color of the tabs on the red navigation bar at the very top.*/
+/*This is the color of the tabs on the navigation bar at the very top.*/
 header .navbar li a {
   color: var(--white);
 }
@@ -313,7 +313,7 @@ footer img {
   }
 
   @media screen and (max-width: 1300px) {
-    .banner {
+    .banner .foodimage {
       height: 500px;
     }
     nav > ul {
@@ -341,7 +341,7 @@ footer img {
   }
 
   @media screen and (max-width: 800px) {
-    .banner img {
+    .banner img .foodimage {
       max-width: 300px;
     }
     .hamburger-btn {
