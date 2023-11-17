@@ -2,11 +2,12 @@
 
 //get wineFamily from localStorage
 const wineFamily = getWineFamilyPreference(); // or"white" depending on user choice from homepage 
-
+document.getElementById("wine-select").classList.add(wineFamily);
 const spoonacularKey = "0a62124c70384954a9d43515e0216eb5";
-const redWines = ["zweigelt", "barbera_wine", "primitivo", "pinot_noir", "nebbiolo", "rioja", "grenache", "malbec", "zinfandel", "sangiovese", "cabernet_sauvignon", "tempranillo", "shiraz", "merlot", "bordeaux", "gamay", "dornfelder", "pinotage", "agiorgitiko"];
 
+const redWines = ["zweigelt", "barbera_wine", "primitivo", "pinot_noir", "nebbiolo", "rioja", "grenache", "malbec", "zinfandel", "sangiovese", "cabernet_sauvignon", "tempranillo", "shiraz", "merlot", "bordeaux", "gamay", "dornfelder", "pinotage", "agiorgitiko"];
 const whiteWines = ["assyrtiko", "moschofilero", "muscadet", "viognier", "verdicchio", "white_burgundy", "chardonnay", "gruener_veltliner", "gavi", "trebbiano", "sauvignon_blanc", "albarino", "verdejo", "vermentino", "pinot_grigio", "gewurztraminer", "chenin_blanc", "riesling"];
+
 let selectElement;
 //function to display selected wine-family image//
 function displaySelectedWineFamilyImage(){
@@ -23,11 +24,10 @@ document.addEventListener("DOMContentLoaded", async (event) => {
     let wineFamily = getWineFamilyPreference();
 
     if (!wineFamily) {
-        // this has to be a redirect to home instead of an alert
         alert(`No wine selection has been made as yet`);
         wineFamily = "white";
     }
-    //call funtion to display selected wine-family image//
+    //call function to display selected wine-family image//
     displaySelectedWineFamilyImage();
 
     selectElement = document.getElementById("wine-select")
@@ -44,10 +44,8 @@ document.addEventListener("DOMContentLoaded", async (event) => {
     */
 });
 
+// this fetch function has to run once that user chooses a specific wine
 
-
-// this fetch function has to run on select change (once that user chooses a specific wine)
-// selectEl.addEventListener("change", (event) => {});
 async function fetchWines(wineFamily) {
     const recommendedWines = await fetch(`https://api.spoonacular.com/food/wine/dishes?wine=${wineFamily}&apiKey=${spoonacularKey}`);
     const wines = await recommendedWines.json();
@@ -55,6 +53,7 @@ async function fetchWines(wineFamily) {
     const paragraph = document.createElement('p');
     paragraph.textContent = wines.text;
     const listContainer = document.createElement('ul');
+    listContainer.classList.add("pairing-list");
     wines.pairings?.forEach(el => {
         const listEl = document.createElement('li');
         listEl.textContent = el;
