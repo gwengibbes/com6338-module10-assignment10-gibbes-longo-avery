@@ -1,16 +1,22 @@
+/* JS constants */
+
 const apiKey = "f61be50c9040c3f95ea07adbb8a3454e";
 const searchInput = document.getElementById('searchInput');
 const searchButton = document.getElementById('searchButton');
 const recipeResultsContainer = document.getElementById('recipeResults');
-const savedSearchTerm = localStorage.getItem('savedSearchTerm');
 
+/* Search bar and local storage for search bar */
+const savedSearchTerm = localStorage.getItem('savedSearchTerm');
 if (savedSearchTerm) {
   searchInput.value = savedSearchTerm;
 }
 
+/* Search button */
 searchButton.onclick = function () {
   searchRecipes();
 };
+
+/* Edamam API search instructions (and more local storage functions.)*/
 
 async function searchRecipes() {
   const searchTerm = searchInput.value;
@@ -27,6 +33,8 @@ async function searchRecipes() {
   }
 }
 
+/*Food results container*/
+
 function displayResults(data) {
   recipeResultsContainer.innerHTML = '';
 
@@ -38,6 +46,7 @@ function displayResults(data) {
                                  <p>${recipe.source}</p>
                                  <img src="${recipe.image}" alt="${recipe.label}">
                                  <button class="view-recipe-btn">View Recipe</button>`;
+/* Food results button */
 
       const viewRecipeBtn = recipeElement.querySelector('.view-recipe-btn');
       viewRecipeBtn.addEventListener('click', () => {
@@ -49,6 +58,8 @@ function displayResults(data) {
     recipeResultsContainer.innerHTML = '<p>No recipes found.</p>';
   }
 }
+
+/* Search error caught */
 
 function displayError() {
   recipeResultsContainer.innerHTML = '<p>Please try again later.</p>';
