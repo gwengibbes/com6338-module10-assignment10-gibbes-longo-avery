@@ -54,6 +54,8 @@ header ul {
   margin: 0;
   padding: 48px 0;
   display: flex;
+  align-content: center;
+  justify-content: center;
   list-style: none;
 }
 /*This adds in the spacing, etc for the words in the nav bar.*/
@@ -201,6 +203,38 @@ footer img {
   height: auto;
 }
 
+/*Select style*/
+select{
+  text-transform: uppercase;
+  font-size: 16px; 
+  padding: 7px;
+  text-align: center;
+  border: none;
+  font-weight: 500;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+select.red{
+ background-color:#f46161;
+}
+select.white{
+  background-color: rgb(249, 214, 63);
+ }
+
+ #text-content p{
+  margin: 20px 100px;
+}
+
+/*Pairing list style*/
+.pairing-list{
+  list-style-type: none; 
+  text-transform: capitalize;
+  padding:0;
+  margin-bottom: 3em;
+}
+
+
 @media screen and (max-width: 1300px) {
   .banner {
     height: 500px;
@@ -290,6 +324,7 @@ footer img {
     font-size: 1.2rem;
     cursor: pointer;
     transition: 100ms;
+    margin: 20px; 
   }
 
   button:hover, button:focus, a.btn:hover, a.btn:focus {
@@ -330,6 +365,8 @@ footer img {
     section div div button {
       display: block;
       margin: auto;
+      margin-bottom: 1em;
+      margin-top: 1em;
     }
     section div div h2 {
       text-align: center;
@@ -393,9 +430,11 @@ footer img {
  /* This is a generic class to center text on any element. See index html h2.*/
 .text-center{
   text-align: center;
+  margin: 20px
 }
 
 /*This is a generic class to make text large on any element. See index html h2.*/
 .text-lg{
   font-size: 48px;
 }
+
