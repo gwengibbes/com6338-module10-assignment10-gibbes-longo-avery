@@ -5,12 +5,6 @@ const searchInput = document.getElementById('searchInput');
 const searchButton = document.getElementById('searchButton');
 const recipeResultsContainer = document.getElementById('recipeResults');
 
-/* Search bar and local storage for search bar */
-const savedSearchTerm = localStorage.getItem('savedSearchTerm');
-if (savedSearchTerm) {
-  searchInput.value = savedSearchTerm;
-}
-
 /* Search button */
 searchButton.onclick = function () {
   searchRecipes();
@@ -20,7 +14,6 @@ searchButton.onclick = function () {
 
 async function searchRecipes() {
   const searchTerm = searchInput.value;
-  localStorage.setItem('savedSearchTerm', searchTerm);
   const apiUrl = `https://api.edamam.com/api/recipes/v2?type=public&q=${searchTerm}&app_id=108faad6&app_key=${apiKey}`;
 
   try {

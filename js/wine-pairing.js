@@ -1,4 +1,4 @@
-//This is specifically for the wine pairing page
+//This is specifically for the wine pairing page//
 
 //get wineFamily from localStorage
 const wineFamily = getWineFamilyPreference(); // or"white" depending on user choice from homepage 
@@ -36,15 +36,9 @@ document.addEventListener("DOMContentLoaded", async (event) => {
         fetchWines(selectElement.value);
     })
 
-    // Populate the drop downlist with the list of wines from the API 
-    /* 
-        When the user selects the wine from the list
-        1. Save the selected wine to localstorage
-        2. Send the users to the /recipe-generator page
-    */
 });
 
-// this fetch function has to run once that user chooses a specific wine
+// This fetch function has to run once that user chooses a specific wine
 
 async function fetchWines(wineFamily) {
     const recommendedWines = await fetch(`https://api.spoonacular.com/food/wine/dishes?wine=${wineFamily}&apiKey=${spoonacularKey}`);
@@ -86,5 +80,5 @@ function createSelectOptions() {
 // function moved here from index.js because it is where we need it
 function getWineFamilyPreference() {
     // get wine family from localStorage
-    return localStorage.getItem(lsWinePrefKey);
+    return localStorage.getItem('sml.winePref');
 }
