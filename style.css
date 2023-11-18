@@ -1,6 +1,7 @@
 :root {
   --white: #f3f3f3;
   --red: #ee252f;
+  --yellow: rgba(234, 200, 6, 0.908);
   --black: #080801;
 }
 
@@ -49,6 +50,11 @@ header h1 {
   background-size: contain;
   padding: 30px 0 10px;
   padding-left: 80px;
+}
+/*To change the color of the word Sommelier when the user hovers on it.*/
+header a:hover {
+color: var(--red);
+text-decoration: none;
 }
 /* This spreads the tab words out in a line.*/
 header ul {
@@ -220,7 +226,7 @@ select.red{
  background-color:#f46161;
 }
 select.white{
-  background-color: rgb(249, 214, 63);
+  background-color:rgb(249, 214, 63);
  }
 
  #text-content p{
@@ -240,12 +246,7 @@ select.white{
   .banner {
     height: 500px;
   }
-  nav > ul {
-    justify-content: space-evenly;
-  }
-  nav > ul > li {
-    margin-right: 0;
-  }
+
   section div {
     justify-content: center;
   }
@@ -271,40 +272,11 @@ select.white{
   .banner img {
     max-width: 300px;
   }
-  .hamburger-btn {
-    display: block;
-  }
+
   header {
     box-sizing: border-box;
   }
-  ul.hamburger-menu {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    transform: translateY(-50%) scaleY(0);
-    width: 100%;
-    background-color: var(--yellow);
-    transition: transform 100ms;
-    padding: 0;
-  }
-  ul.hamburger-menu.show-menu {
-    transform: none;
-  }
-  ul.hamburger-menu li {
-    opacity: 0;
-    padding: 6px 0;
-    margin: 0;
-    text-align: center;
-    font-weight: 500;
-    visibility: hidden;
-  }
-  nav ul.hamburger-menu.show-menu li {
-    visibility: visible;
-    animation: fade-in 100ms ease 100ms 1 forwards;
-  }
-  ul.hamburger-menu li:last-child {
-    padding-bottom: 24px;
-  }
+
   footer > img {
     max-width: 300px;
   }
@@ -330,6 +302,8 @@ select.white{
 
   button:hover, button:focus, a.btn:hover, a.btn:focus {
     background-color: var(--red);
+    color:white;
+    text-decoration: none;
   }
 
   a {
@@ -341,22 +315,11 @@ select.white{
     text-decoration: underline;
   }
 
-  .hamburger-btn {
-    display: none;
-    font-size: 3rem;
-    padding: 12px 24px 24px;
-  }
-
   @media screen and (max-width: 1300px) {
     .banner .foodimage {
       height: 500px;
     }
-    nav > ul {
-      justify-content: space-evenly;
-    }
-    nav > ul > li {
-      margin-right: 0;
-    }
+
     section div {
       justify-content: center;
     }
@@ -381,40 +344,7 @@ select.white{
     .banner img .foodimage {
       max-width: 300px;
     }
-    .hamburger-btn {
-      display: block;
-    }
-    header {
-      box-sizing: border-box;
-    }
-    ul.hamburger-menu {
-      display: flex;
-      flex-direction: column;
-      position: absolute;
-      transform: translateY(-50%) scaleY(0);
-      width: 100%;
-      background-color: var(--yellow);
-      transition: transform 100ms;
-      padding: 0;
-    }
-    ul.hamburger-menu.show-menu {
-      transform: none;
-    }
-    ul.hamburger-menu li {
-      opacity: 0;
-      padding: 6px 0;
-      margin: 0;
-      text-align: center;
-      font-weight: 500;
-      visibility: hidden;
-    }
-    nav ul.hamburger-menu.show-menu li {
-      visibility: visible;
-      animation: fade-in 100ms ease 100ms 1 forwards;
-    }
-    ul.hamburger-menu li:last-child {
-      padding-bottom: px;
-    }
+
     footer > img {
       max-width: 200px;
     }
@@ -439,3 +369,14 @@ select.white{
   font-size: 48px;
 }
 
+/*This styles the buttons to highligh red or white depending on the type of wine.*/
+.btn-red-wine,btn-red-wine:hover{
+background-color: var(--red);
+color:white;
+}
+
+/*This styles the buttons to highligh red or white depending on the type of wine.*/
+.btn-white-wine,.btn-white-wine:hover{
+  background-color: var(--yellow);
+  color:white;
+}

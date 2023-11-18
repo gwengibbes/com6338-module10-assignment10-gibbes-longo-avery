@@ -2,11 +2,6 @@ const apiKey = "f61be50c9040c3f95ea07adbb8a3454e";
 const searchInput = document.getElementById('searchInput');
 const searchButton = document.getElementById('searchButton');
 const recipeResultsContainer = document.getElementById('recipeResults');
-const savedSearchTerm = localStorage.getItem('savedSearchTerm');
-
-if (savedSearchTerm) {
-  searchInput.value = savedSearchTerm;
-}
 
 searchButton.onclick = function () {
   searchRecipes();
@@ -14,7 +9,6 @@ searchButton.onclick = function () {
 
 async function searchRecipes() {
   const searchTerm = searchInput.value;
-  localStorage.setItem('savedSearchTerm', searchTerm);
   const apiUrl = `https://api.edamam.com/api/recipes/v2?type=public&q=${searchTerm}&app_id=108faad6&app_key=${apiKey}`;
 
   try {
