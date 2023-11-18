@@ -14,10 +14,10 @@ function displaySelectedWineFamilyImage(){
     const featuredImageEl = document.querySelector('#featuredImage');
     if (wineFamily==='white'){
          //update the image to show a white wine//
-         featuredImageEl.setAttribute('src','/images/Wine being poured - white .jpg')
+         featuredImageEl.setAttribute('src','./images/Wine being poured - white .jpg')
     } else {
         //update the image to show a red wine//
-        featuredImageEl.setAttribute('src','/images/Wine being poured - red .jpg')
+        featuredImageEl.setAttribute('src','./images/Wine being poured - red .jpg')
     }
 }
 document.addEventListener("DOMContentLoaded", async (event) => {
