@@ -8,12 +8,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     redWineButtonEl.addEventListener('click', () => {
         localStorage.setItem('sml.winePref', 'red');
-        window.location = '/wine-pairing/';
+        window.location = './wine-pairing/';
     });
 
 
     whiteWineButtonEl.addEventListener('click', () => {
         localStorage.setItem('sml.winePref', 'white');
-        window.location = '/wine-pairing/';
+        window.location = './wine-pairing/';
     });
 });
